@@ -1,38 +1,32 @@
 export const metrics = [
   {
     id: 'experience',
-    value: '+35',
-    label: 'años de experiencia',
+    text: 'Más de 35 años de experiencia en infraestructura civil',
     icon: 'calendar',
   },
   {
     id: 'leadership',
-    value: 'Jefatura y dirección',
-    label: 'de obra',
+    text: 'Jefatura y dirección de obra',
     icon: 'hardhat',
   },
   {
     id: 'specialties',
-    value: 'Infraestructura',
-    label: 'vial, hidráulica, sanitaria, urbana y aeroportuaria',
+    text: 'Infraestructura vial, hidráulica, sanitaria, urbana y aeroportuaria',
     icon: 'layers',
   },
   {
     id: 'international',
-    value: 'Argentina, Uruguay',
-    label: 'y Armenia',
+    text: 'Experiencia en Argentina, Uruguay y Armenia',
     icon: 'globe',
   },
   {
     id: 'clients',
-    value: 'Organismos públicos',
-    label: 'y comitentes privados',
+    text: 'Obras para organismos públicos y comitentes privados',
     icon: 'building',
   },
   {
     id: 'management',
-    value: 'Gestión integral',
-    label: 'de equipos, subcontratistas, proveedores y certificaciones',
+    text: 'Gestión de equipos, subcontratistas, proveedores y certificaciones',
     icon: 'users',
   },
 ]

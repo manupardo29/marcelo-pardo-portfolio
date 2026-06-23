@@ -1,6 +1,7 @@
 import { hero, contact } from '../data/contact'
 import Button from '../components/Button'
 import { Icon } from '../components/Icon'
+import HeroVisual from '../components/HeroVisual'
 
 export default function Hero() {
   return (
@@ -18,7 +19,7 @@ export default function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="order-1">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3 py-1.5 text-xs font-medium text-primary-700 sm:text-sm">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+              <span className="h-2 w-2 rounded-full bg-amber-500" aria-hidden="true" />
               {contact.status}
             </div>
 
@@ -76,8 +77,8 @@ export default function Hero() {
           </div>
 
           <div className="order-2 lg:max-w-none">
-            <div className="mx-auto max-w-sm overflow-hidden rounded-xl border border-border bg-white shadow-lg lg:max-w-none">
-              <div className="aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/4]">
+            <div className="mx-auto overflow-hidden rounded-xl border border-border bg-white shadow-lg lg:max-w-none">
+              <div className="aspect-[3/2] sm:aspect-[4/3] lg:aspect-[4/5]">
                 {hero.profileImage ? (
                   <img
                     src={hero.profileImage}
@@ -85,15 +86,7 @@ export default function Hero() {
                     className="h-full w-full object-cover"
                   />
                 ) : (
-                  <div className="relative flex h-full flex-col items-center justify-center bg-gradient-to-br from-primary-50 via-white to-surface-alt p-6 sm:p-8">
-                    <div className="absolute inset-3 rounded-lg border border-dashed border-primary-200 sm:inset-4" aria-hidden="true" />
-                    <div className="relative text-primary-300">
-                      <Icon name="construction" />
-                    </div>
-                    <p className="relative mt-3 text-center text-sm font-medium text-primary-500">
-                      Foto profesional próximamente
-                    </p>
-                  </div>
+                  <HeroVisual />
                 )}
               </div>
             </div>
