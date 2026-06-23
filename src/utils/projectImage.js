@@ -18,8 +18,3 @@ export function getProjectImageAlt(project) {
   if (project.imageAlt) return project.imageAlt
   return `Obra de infraestructura civil: ${project.name}, ${project.category}`
 }
-
-/** Indica si la obra tiene una imagen configurada (aunque aún no exista el archivo). */
-export function hasProjectImage(project) {
-  return getProjectImageSrc(project.image) !== null
-}

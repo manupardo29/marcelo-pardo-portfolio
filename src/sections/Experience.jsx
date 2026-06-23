@@ -5,9 +5,10 @@ import Timeline from '../components/Timeline'
 
 export default function Experience() {
   return (
-    <section id="experiencia" className="section-padding bg-surface">
+    <section id="experiencia" className="section-padding bg-white" aria-labelledby="experiencia-heading">
       <div className="mx-auto max-w-5xl">
         <SectionTitle
+          id="experiencia-heading"
           label="Trayectoria"
           title="Experiencia profesional"
           description="Resumen de la trayectoria en empresas constructoras y organismos públicos, con foco en jefatura y dirección de obra."

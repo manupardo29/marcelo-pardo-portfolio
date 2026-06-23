@@ -3,9 +3,10 @@ import SectionTitle from '../components/SectionTitle'
 
 export default function Education() {
   return (
-    <section className="section-padding bg-surface" aria-label="Educación y formación">
+    <section className="section-padding bg-white" aria-labelledby="formacion-heading">
       <div className="mx-auto max-w-4xl">
         <SectionTitle
+          id="formacion-heading"
           label="Formación"
           title="Educación y formación"
         />

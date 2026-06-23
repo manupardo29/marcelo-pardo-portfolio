@@ -7,9 +7,10 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <section id="obras" className="section-padding bg-white">
+    <section id="obras" className="section-padding bg-white" aria-labelledby="obras-heading">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
+          id="obras-heading"
           label="Portfolio"
           title="Obras destacadas"
           description="Proyectos de infraestructura civil en los que intervino como jefe o director de obra."

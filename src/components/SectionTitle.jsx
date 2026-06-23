@@ -1,4 +1,4 @@
-export default function SectionTitle({ label, title, description, align = 'center', dark = false }) {
+export default function SectionTitle({ label, title, description, align = 'center', dark = false, id }) {
   const alignClass = align === 'left' ? 'text-left' : 'text-center'
 
   return (
@@ -13,6 +13,7 @@ export default function SectionTitle({ label, title, description, align = 'cente
         </p>
       )}
       <h2
+        id={id}
         className={`text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl ${
           dark ? 'text-white' : 'text-slate-900'
         }`}

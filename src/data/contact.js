@@ -11,7 +11,7 @@ export const contact = {
 }
 
 export const hero = {
-  name: 'Marcelo Daniel Pardo',
+  name: contact.name,
   roles: 'Ingeniero Civil | Jefe de Obra | Director de Obra',
   headline:
     'Más de 35 años de experiencia en dirección, jefatura, supervisión y ejecución de obras de infraestructura civil.',

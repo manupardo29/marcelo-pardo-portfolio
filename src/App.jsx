@@ -1,4 +1,5 @@
-import Header, { Footer } from './components/Header'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import MobileContactBar from './components/MobileContactBar'
 import Hero from './sections/Hero'
 import Metrics from './sections/Metrics'

@@ -4,9 +4,10 @@ import SpecializationCard from '../components/SpecializationCard'
 
 export default function Specializations() {
   return (
-    <section id="especializacion" className="section-padding bg-surface">
+    <section id="especializacion" className="section-padding bg-surface" aria-labelledby="especializacion-heading">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
+          id="especializacion-heading"
           label="Especialización"
           title="Áreas de especialización"
           description="Experiencia técnica en múltiples disciplinas de la ingeniería civil e infraestructura."

@@ -1,12 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { navigation } from '../data/navigation'
 import { contact } from '../data/contact'
 import Button from './Button'
 import { Icon } from './Icon'
+import { useFocusTrap, useEscapeKey } from '../hooks/useFocusTrap'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const menuRef = useRef(null)
+
+  useFocusTrap(isOpen, menuRef)
+  useEscapeKey(isOpen, () => setIsOpen(false))
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -72,7 +77,7 @@ export default function Header() {
       </header>
 
       {isOpen && (
-        <div className="fixed inset-0 z-30 lg:hidden" aria-hidden="false">
+        <div className="fixed inset-0 z-30 lg:hidden">
           <div
             className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
             onClick={handleNavClick}
@@ -80,6 +85,7 @@ export default function Header() {
           />
           <nav
             id="mobile-menu"
+            ref={menuRef}
             className="absolute inset-x-0 top-14 border-b border-border bg-white px-4 pb-6 pt-2 shadow-lg sm:top-16"
             aria-label="Navegación móvil"
           >
@@ -120,42 +126,5 @@ export default function Header() {
         </div>
       )}
     </>
-  )
-}
-
-export function Footer() {
-  const year = new Date().getFullYear()
-
-  return (
-    <footer className="border-t border-border bg-slate-900 pb-20 text-slate-400 sm:pb-10">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-          <div className="text-center sm:text-left">
-            <p className="font-semibold text-white">{contact.name}</p>
-            <p className="mt-1 text-sm">{contact.title} — {contact.location}</p>
-          </div>
-          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-            <a
-              href={`mailto:${contact.email}`}
-              className="text-sm transition-colors hover:text-white"
-            >
-              {contact.email}
-            </a>
-            <a
-              href={contact.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 transition-colors hover:text-white"
-              aria-label="LinkedIn de Marcelo Daniel Pardo"
-            >
-              <Icon name="linkedin" />
-            </a>
-          </div>
-        </div>
-        <div className="mt-8 border-t border-slate-800 pt-6 text-center text-xs">
-          <p>&copy; {year} Marcelo Daniel Pardo. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
   )
 }

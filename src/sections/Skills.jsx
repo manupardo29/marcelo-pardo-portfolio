@@ -1,26 +1,25 @@
 import { skills } from '../data/skills'
 import SectionTitle from '../components/SectionTitle'
+import Badge from '../components/Badge'
 
 export default function Skills() {
   return (
-    <section className="section-padding bg-white" aria-label="Herramientas y conocimientos técnicos">
+    <section className="section-padding bg-surface" aria-labelledby="skills-heading">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
+          id="skills-heading"
           label="Competencias"
           title="Conocimientos técnicos"
           description="Herramientas y capacidades aplicadas en la gestión y ejecución de obra."
         />
 
-        <div className="flex flex-wrap justify-center gap-3">
+        <ul className="flex flex-wrap justify-center gap-3" role="list">
           {skills.map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
-            >
-              {skill}
-            </span>
+            <li key={skill}>
+              <Badge>{skill}</Badge>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )

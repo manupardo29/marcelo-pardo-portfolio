@@ -1,20 +1,18 @@
 import { useEffect, useRef } from 'react'
 import ProjectImage from './ProjectImage'
 import Button from './Button'
+import Card from './Card'
+import { Icon } from './Icon'
 import { getProjectImageAlt } from '../utils/projectImage'
+import { useFocusTrap, useEscapeKey } from '../hooks/useFocusTrap'
 
 export default function ProjectCard({ project, onViewDetail }) {
   const imageAlt = getProjectImageAlt(project)
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-all duration-200 hover:border-primary-200 hover:shadow-md">
-      {/* Contenedor fijo: mantiene proporción con foto real o placeholder */}
+    <Card as="article" className="group flex flex-col overflow-hidden transition-all duration-200 hover:border-primary-200">
       <div className="relative aspect-[5/3] overflow-hidden border-b border-border bg-surface sm:aspect-[16/10]">
-        <ProjectImage
-          src={project.image}
-          alt={imageAlt}
-          name={project.name}
-        />
+        <ProjectImage src={project.image} alt={imageAlt} name={project.name} />
         <div className="pointer-events-none absolute left-3 top-3 right-3">
           <span className="inline-block max-w-full truncate rounded-md bg-primary-600/90 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
             {project.category}
@@ -55,13 +53,16 @@ export default function ProjectCard({ project, onViewDetail }) {
           Ver detalle
         </Button>
       </div>
-    </article>
+    </Card>
   )
 }
 
 export function ProjectModal({ project, onClose }) {
-  const dialogRef = useRef(null)
+  const panelRef = useRef(null)
   const closeButtonRef = useRef(null)
+
+  useFocusTrap(!!project, panelRef)
+  useEscapeKey(!!project, onClose)
 
   useEffect(() => {
     if (!project) return
@@ -69,19 +70,13 @@ export function ProjectModal({ project, onClose }) {
     const previousFocus = document.activeElement
     closeButtonRef.current?.focus()
 
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') onClose()
-    }
-
     document.body.style.overflow = 'hidden'
-    document.addEventListener('keydown', handleKeyDown)
 
     return () => {
       document.body.style.overflow = ''
-      document.removeEventListener('keydown', handleKeyDown)
       previousFocus?.focus()
     }
-  }, [project, onClose])
+  }, [project])
 
   if (!project) return null
 
@@ -93,7 +88,6 @@ export function ProjectModal({ project, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="project-modal-title"
-      ref={dialogRef}
     >
       <div
         className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
@@ -101,22 +95,20 @@ export function ProjectModal({ project, onClose }) {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-white shadow-2xl sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl">
+      <div
+        ref={panelRef}
+        className="relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-white shadow-2xl sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl"
+      >
         <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-surface">
-          <ProjectImage
-            src={project.image}
-            alt={imageAlt}
-            name={project.name}
-          />
+          <ProjectImage src={project.image} alt={imageAlt} name={project.name} />
           <button
             ref={closeButtonRef}
+            type="button"
             onClick={onClose}
             className="absolute right-3 top-3 rounded-full bg-white/90 p-2.5 text-slate-600 shadow-sm transition-colors hover:bg-white hover:text-slate-900"
             aria-label="Cerrar detalle de obra"
           >
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <Icon name="close" />
           </button>
         </div>
 
