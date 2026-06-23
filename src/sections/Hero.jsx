@@ -18,8 +18,8 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="order-1">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-primary-600 sm:text-sm">
-              <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-available/25 bg-available-light px-3 py-1.5 text-xs font-medium text-available sm:text-sm">
+              <span className="h-2 w-2 rounded-full bg-available" aria-hidden="true" />
               {contact.status}
             </div>
 

@@ -33,7 +33,7 @@ export default function SectionTitle({ label, title, description, align = 'cente
         className={`mt-4 flex items-center gap-1 sm:mt-5 ${align === 'left' ? '' : 'mx-auto justify-center'}`}
       >
         <div className={`h-0.5 w-10 sm:w-14 ${dark ? 'bg-primary-400' : 'bg-primary-600'}`} />
-        <div className={`h-1 w-1 rounded-full ${dark ? 'bg-accent' : 'bg-accent'}`} aria-hidden="true" />
+        <div className="h-1 w-1 rounded-full bg-accent/80" aria-hidden="true" />
       </div>
     </div>
   )

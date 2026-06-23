@@ -6,8 +6,8 @@
   --color-primary-100: #d5e2ea;
   --color-primary-200: #adc5d5;
   --color-primary-300: #7a9db3;
-  --color-primary-400: #4d7a94;
-  --color-primary-500: #1f5d7a;
+  --color-primary-400: #3d6d82;
+  --color-primary-500: #2f5f73;
   --color-primary-600: #12384f;
   --color-primary-700: #0e2d3f;
   --color-primary-800: #0a222f;
@@ -24,10 +24,14 @@
   --color-ink: #111827;
   --color-muted: #4b5563;
 
-  /* Ámbar construcción — solo acentos */
-  --color-accent: #c8872d;
-  --color-accent-light: #f8f1e8;
-  --color-accent-muted: #e8d9c4;
+  /* Cobre apagado — acentos sutiles únicamente */
+  --color-accent: #b7793b;
+  --color-accent-light: #e8d4b5;
+  --color-accent-muted: #dcc9a8;
+
+  /* Estado disponible */
+  --color-available: #2e7d5b;
+  --color-available-light: #e8f3ed;
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }

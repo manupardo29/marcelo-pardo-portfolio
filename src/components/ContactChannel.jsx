@@ -4,7 +4,7 @@ export default function ContactChannel({ href, icon, label, value, external = fa
       href={href}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
-      className="flex flex-col items-center gap-2 rounded-xl border border-border bg-surface p-4 text-muted transition-colors hover:border-primary-200 hover:bg-primary-50 active:bg-primary-50"
+      className="flex flex-col items-center gap-2 rounded-xl border border-border border-t-2 border-t-accent/25 bg-surface p-4 text-muted transition-colors hover:border-primary-200 hover:bg-primary-50 active:bg-primary-50"
     >
       <span className="text-primary-600">{icon}</span>
       <span className="text-xs font-medium uppercase tracking-wide text-muted">{label}</span>

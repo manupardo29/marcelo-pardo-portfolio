@@ -14,7 +14,7 @@ export default function Timeline({ items }) {
           <div className="hidden w-1/2 sm:block" />
 
           <div
-            className="absolute left-0 top-5 z-10 h-3.5 w-3.5 rounded-full border-2 border-white bg-primary-600 shadow-sm sm:left-1/2 sm:-translate-x-1/2"
+            className="absolute left-0 top-5 z-10 h-3.5 w-3.5 rounded-full border-2 border-card bg-primary-600 shadow-sm sm:left-1/2 sm:-translate-x-1/2"
             aria-hidden="true"
           />
 
@@ -25,7 +25,7 @@ export default function Timeline({ items }) {
           >
             <div
               className={`rounded-xl border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5 ${
-                item.current ? 'border-primary-200 ring-1 ring-primary-100' : ''
+                item.current ? 'border-l-2 border-l-accent/50 border-primary-200 ring-1 ring-primary-100' : ''
               }`}
             >
               {item.current && (

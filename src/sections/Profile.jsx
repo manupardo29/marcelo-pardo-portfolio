@@ -19,12 +19,12 @@ export default function Profile() {
             {profile.text}
           </p>
 
-          <Card hover={false} className="mt-10 p-6 sm:p-8">
+          <Card hover={false} className="mt-10 border-l-2 border-l-accent/50 p-6 sm:p-8">
             <h3 className="mb-5 text-lg font-semibold text-ink">Competencias en obra</h3>
             <ul className="grid gap-3 sm:grid-cols-2" role="list">
               {profile.strengths.map((strength) => (
                 <li key={strength} className="flex items-start gap-3">
-                  <span className="mt-0.5 text-primary-600" aria-hidden="true">
+                  <span className="mt-0.5 text-accent" aria-hidden="true">
                     <Icon name="check" />
                   </span>
                   <span className="text-sm text-muted sm:text-base">{strength}</span>

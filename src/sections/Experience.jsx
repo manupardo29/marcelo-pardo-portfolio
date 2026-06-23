@@ -17,7 +17,7 @@ export default function Experience() {
         <Timeline items={experience} />
 
         {earlierExperience.length > 0 && (
-          <div className="mt-10 rounded-lg border border-border bg-surface p-5 sm:p-6">
+          <div className="mt-10 rounded-lg border border-border border-t-2 border-t-accent/25 bg-surface p-5 sm:p-6">
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted">
               Otras experiencias
             </h3>

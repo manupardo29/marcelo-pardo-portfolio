@@ -36,7 +36,7 @@ export default function ProjectCard({ project, onViewDetail }) {
           </div>
         </div>
 
-        <div className="mb-4 rounded-lg border border-primary-100 bg-primary-50 px-3 py-2.5">
+        <div className="mb-4 rounded-lg border border-primary-100 border-l-2 border-l-accent/60 bg-primary-50 px-3 py-2.5">
           <p className="text-sm font-semibold leading-snug text-primary-600">{project.metric}</p>
         </div>
 
@@ -132,7 +132,7 @@ export function ProjectModal({ project, onClose }) {
             </div>
           </dl>
 
-          <div className="mb-5 rounded-lg border border-primary-200 bg-primary-50 p-4">
+          <div className="mb-5 rounded-lg border border-primary-200 border-l-2 border-l-accent/60 bg-primary-50 p-4">
             <p className="text-sm font-semibold text-primary-600">{project.metric}</p>
           </div>
 

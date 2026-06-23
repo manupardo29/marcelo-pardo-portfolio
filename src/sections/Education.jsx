@@ -26,8 +26,8 @@ export default function Education() {
           ))}
         </div>
 
-        <div className="mt-6 rounded-lg border border-primary-100 bg-primary-50 p-5">
-          <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-primary-700">
+        <div className="mt-6 rounded-lg border border-primary-100 border-l-2 border-l-accent/40 bg-primary-50 p-5">
+          <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-primary-600">
             Formación complementaria
           </h3>
           <p className="text-sm leading-relaxed text-muted">{complementaryTraining}</p>

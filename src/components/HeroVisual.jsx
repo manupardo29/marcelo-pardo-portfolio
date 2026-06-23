@@ -23,8 +23,8 @@ export default function HeroVisual() {
         className="absolute inset-0 bg-gradient-to-br from-surface/80 via-card to-primary-50/40"
         aria-hidden="true"
       />
-      <div className="absolute left-4 top-4 h-10 w-10 border-l-2 border-t-2 border-accent/60" aria-hidden="true" />
-      <div className="absolute bottom-4 right-4 h-10 w-10 border-b-2 border-r-2 border-accent/60" aria-hidden="true" />
+      <div className="absolute left-4 top-4 h-10 w-10 border-l-2 border-t-2 border-accent/40" aria-hidden="true" />
+      <div className="absolute bottom-4 right-4 h-10 w-10 border-b-2 border-r-2 border-accent/40" aria-hidden="true" />
       <div
         className="absolute right-8 top-1/2 hidden h-px w-16 -translate-y-1/2 bg-border sm:block"
         aria-hidden="true"
@@ -68,7 +68,7 @@ export default function HeroVisual() {
           <ul className="grid gap-1.5 sm:grid-cols-2 sm:gap-2" role="list">
             {specializations.map((area) => (
               <li key={area.id} className="flex items-center gap-2 text-xs text-muted sm:text-sm">
-                <span className="h-px w-2.5 shrink-0 bg-accent" aria-hidden="true" />
+                <span className="h-px w-2.5 shrink-0 bg-accent/70" aria-hidden="true" />
                 <span className="leading-snug">{area.title}</span>
               </li>
             ))}
@@ -84,7 +84,7 @@ export default function HeroVisual() {
               key={metric.id}
               className="flex items-start gap-2.5 rounded-lg border border-border bg-surface/90 px-3 py-2"
             >
-              <span className="mt-0.5 text-accent" aria-hidden="true">
+              <span className="mt-0.5 text-accent/80" aria-hidden="true">
                 <Icon name={metric.icon} />
               </span>
               <p className="text-xs font-medium leading-snug text-ink sm:text-sm">
