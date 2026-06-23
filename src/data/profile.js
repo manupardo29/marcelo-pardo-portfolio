@@ -1,5 +1,5 @@
 export const profile = {
-  text: 'Marcelo Daniel Pardo es Ingeniero Civil egresado de la Universidad de Buenos Aires, con amplia trayectoria en dirección, jefatura, supervisión y ejecución de obras de infraestructura. Su experiencia abarca obras viales, hidráulicas, sanitarias, aeroportuarias y urbanas, liderando equipos de trabajo, coordinando subcontratistas y proveedores, gestionando avances de obra, certificaciones, documentación técnica, control de producción y relación con inspecciones y comitentes.',
+  text: 'Ingeniero Civil egresado de la Universidad de Buenos Aires, con trayectoria en jefatura y dirección de obra en infraestructura vial, hidráulica, sanitaria, urbana y aeroportuaria. Ha desarrollado obras para organismos públicos, concesionarias viales, municipios, aeropuertos y comitentes privados, con responsabilidad directa en la conducción de equipos, la coordinación de subcontratistas y proveedores, y el seguimiento de avance físico, certificaciones y documentación técnica.',
   strengths: [
     'Gestión integral de obra',
     'Planificación y seguimiento técnico',

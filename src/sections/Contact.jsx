@@ -10,7 +10,7 @@ export default function Contact() {
         <SectionTitle
           label="Contacto"
           title="Contacto profesional"
-          description="Disponible para nuevas oportunidades laborales, dirección de obra, jefatura de obra, supervisión técnica y proyectos de infraestructura civil."
+          description="Disponible para dirección de obra, jefatura de obra, supervisión técnica y proyectos de infraestructura civil."
           dark
         />
 

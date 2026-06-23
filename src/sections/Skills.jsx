@@ -7,7 +7,8 @@ export default function Skills() {
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           label="Competencias"
-          title="Herramientas y conocimientos técnicos"
+          title="Conocimientos técnicos"
+          description="Herramientas y capacidades aplicadas en la gestión y ejecución de obra."
         />
 
         <div className="flex flex-wrap justify-center gap-3">

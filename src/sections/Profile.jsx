@@ -9,7 +9,7 @@ export default function Profile() {
         <SectionTitle
           label="Perfil"
           title="Perfil profesional"
-          description="Trayectoria consolidada en dirección y ejecución de obras de infraestructura civil."
+          description="Dirección y ejecución de obras de infraestructura civil en el ámbito público y privado."
         />
 
         <div className="mx-auto max-w-4xl">
@@ -18,7 +18,7 @@ export default function Profile() {
           </p>
 
           <div className="mt-10 rounded-xl border border-border bg-white p-6 shadow-sm sm:p-8">
-            <h3 className="mb-5 text-lg font-semibold text-slate-900">Fortalezas clave</h3>
+            <h3 className="mb-5 text-lg font-semibold text-slate-900">Competencias en obra</h3>
             <ul className="grid gap-3 sm:grid-cols-2">
               {profile.strengths.map((strength) => (
                 <li key={strength} className="flex items-start gap-3">

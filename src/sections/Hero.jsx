@@ -88,9 +88,6 @@ export default function Hero() {
                     <p className="relative mt-4 text-center text-sm font-medium text-primary-500">
                       Foto profesional próximamente
                     </p>
-                    <p className="relative mt-2 text-center text-xs text-slate-400">
-                      Reemplazar en src/data/contact.js → hero.profileImage
-                    </p>
                   </div>
                 )}
               </div>

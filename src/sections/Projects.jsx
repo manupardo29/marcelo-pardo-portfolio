@@ -12,7 +12,7 @@ export default function Projects() {
         <SectionTitle
           label="Portfolio"
           title="Obras destacadas"
-          description="Selección de proyectos de infraestructura civil en los que participó como jefe o director de obra."
+          description="Proyectos de infraestructura civil en los que intervino como jefe o director de obra."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
