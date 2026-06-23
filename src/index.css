@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  /* Azul petróleo — color dominante */
+  --color-primary-50: #eef3f6;
+  --color-primary-100: #d5e2ea;
+  --color-primary-200: #adc5d5;
+  --color-primary-300: #7a9db3;
+  --color-primary-400: #3d6d82;
+  --color-primary-500: #2f5f73;
+  --color-primary-600: #12384f;
+  --color-primary-700: #0e2d3f;
+  --color-primary-800: #0a222f;
+  --color-primary-900: #061820;
+
+  /* Superficies */
+  --color-surface: #f4f7f9;
+  --color-surface-alt: #eef2f5;
+  --color-card: #ffffff;
+  --color-border: #d7dee5;
+  --color-border-dark: #c5ced8;
+
+  /* Texto */
+  --color-ink: #111827;
+  --color-muted: #4b5563;
+
+  /* Cobre apagado — acentos sutiles únicamente */
+  --color-accent: #b7793b;
+  --color-accent-light: #e8d4b5;
+  --color-accent-muted: #dcc9a8;
+
+  /* Estado disponible */
+  --color-available: #2e7d5b;
+  --color-available-light: #e8f3ed;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-surface text-muted antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink;
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+}
+
+@layer utilities {
+  .grid-pattern {
+    background-image:
+      linear-gradient(to right, rgb(18 56 79 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(18 56 79 / 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .section-padding {
+    @apply px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24;
+  }
+
+  .section-padding-tight {
+    @apply px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}

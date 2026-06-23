@@ -1,0 +1,15 @@
+export const skills = [
+  'Planificación de obra',
+  'Control de producción',
+  'Certificaciones de avance',
+  'Cómputos y presupuestos',
+  'Interpretación de planos',
+  'Documentación técnica de obra',
+  'Control de calidad en obra',
+  'Seguridad e higiene en obra',
+  'AutoCAD 2D',
+  'Microsoft Project',
+  'Microsoft Excel',
+  'Microsoft Word',
+  'Inglés técnico',
+]
