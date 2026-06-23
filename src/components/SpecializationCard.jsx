@@ -7,8 +7,8 @@ export default function SpecializationCard({ item }) {
       <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-100 sm:mb-4 sm:h-12 sm:w-12">
         <Icon name={item.icon} />
       </div>
-      <h3 className="mb-2 text-base font-semibold text-slate-900 sm:text-lg">{item.title}</h3>
-      <p className="text-sm leading-relaxed text-slate-600">{item.description}</p>
+      <h3 className="mb-2 text-base font-semibold text-ink sm:text-lg">{item.title}</h3>
+      <p className="text-sm leading-relaxed text-muted">{item.description}</p>
     </Card>
   )
 }

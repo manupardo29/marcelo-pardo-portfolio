@@ -32,7 +32,7 @@ export default function ProjectImage({ src, alt, name, className = '' }) {
 
   return (
     <div
-      className={`relative flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-primary-50 via-white to-surface-alt ${className}`}
+      className={`relative flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-primary-50 via-card to-surface-alt ${className}`}
       role="img"
       aria-label={alt || 'Imagen de obra no disponible'}
     >
@@ -40,7 +40,7 @@ export default function ProjectImage({ src, alt, name, className = '' }) {
         className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgb(30 77 107 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(30 77 107 / 0.06) 1px, transparent 1px)',
+            'linear-gradient(to right, rgb(18 56 79 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(18 56 79 / 0.06) 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
         aria-hidden="true"

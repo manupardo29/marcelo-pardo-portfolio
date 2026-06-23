@@ -33,14 +33,14 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
           isScrolled || isOpen
-            ? 'border-b border-border bg-white/95 shadow-sm backdrop-blur-md'
-            : 'bg-white/90 backdrop-blur-sm'
+            ? 'border-b border-border bg-card/95 shadow-sm backdrop-blur-md'
+            : 'bg-card/90 backdrop-blur-sm'
         }`}
       >
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6 lg:px-8">
           <a
             href="#inicio"
-            className="shrink-0 text-base font-bold tracking-tight text-primary-700 transition-colors hover:text-primary-800 sm:text-lg"
+            className="shrink-0 text-base font-bold tracking-tight text-primary-600 transition-colors hover:text-primary-700 sm:text-lg"
             onClick={handleNavClick}
           >
             Marcelo Pardo
@@ -51,7 +51,7 @@ export default function Header() {
               <a
                 key={item.id}
                 href={item.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-primary-50 hover:text-primary-700"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-primary-50 hover:text-primary-700"
               >
                 {item.label}
               </a>
@@ -64,7 +64,7 @@ export default function Header() {
             </Button>
             <button
               type="button"
-              className="rounded-lg p-2.5 text-slate-600 transition-colors hover:bg-surface-alt lg:hidden"
+              className="rounded-lg p-2.5 text-muted transition-colors hover:bg-surface-alt lg:hidden"
               onClick={() => setIsOpen(!isOpen)}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
@@ -79,14 +79,14 @@ export default function Header() {
       {isOpen && (
         <div className="fixed inset-0 z-30 lg:hidden">
           <div
-            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-primary-900/40 backdrop-blur-sm"
             onClick={handleNavClick}
             aria-hidden="true"
           />
           <nav
             id="mobile-menu"
             ref={menuRef}
-            className="absolute inset-x-0 top-14 border-b border-border bg-white px-4 pb-6 pt-2 shadow-lg sm:top-16"
+            className="absolute inset-x-0 top-14 border-b border-border bg-card px-4 pb-6 pt-2 shadow-lg sm:top-16"
             aria-label="Navegación móvil"
           >
             <div className="flex flex-col gap-0.5">
@@ -95,7 +95,7 @@ export default function Header() {
                   key={item.id}
                   href={item.href}
                   onClick={handleNavClick}
-                  className="rounded-lg px-4 py-3.5 text-base font-medium text-slate-700 transition-colors active:bg-primary-50"
+                  className="rounded-lg px-4 py-3.5 text-base font-medium text-muted transition-colors active:bg-primary-50"
                 >
                   {item.label}
                 </a>

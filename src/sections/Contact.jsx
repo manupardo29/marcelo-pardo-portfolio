@@ -6,7 +6,7 @@ import { Icon } from '../components/Icon'
 
 export default function Contact() {
   return (
-    <section id="contacto" className="section-padding bg-primary-700" aria-labelledby="contacto-heading">
+    <section id="contacto" className="section-padding bg-primary-600" aria-labelledby="contacto-heading">
       <div className="mx-auto max-w-3xl text-center">
         <SectionTitle
           id="contacto-heading"
@@ -16,7 +16,7 @@ export default function Contact() {
           dark
         />
 
-        <div className="mx-auto rounded-2xl border border-primary-500/50 bg-white p-5 shadow-xl sm:p-8">
+        <div className="mx-auto rounded-2xl border border-primary-500/40 bg-card p-5 shadow-xl sm:p-8">
           <div className="mb-6 grid gap-3 sm:grid-cols-3">
             <ContactChannel
               href={`mailto:${contact.email}`}

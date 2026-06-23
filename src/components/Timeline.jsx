@@ -24,7 +24,7 @@ export default function Timeline({ items }) {
             }`}
           >
             <div
-              className={`rounded-xl border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5 ${
+              className={`rounded-xl border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5 ${
                 item.current ? 'border-primary-200 ring-1 ring-primary-100' : ''
               }`}
             >
@@ -33,9 +33,9 @@ export default function Timeline({ items }) {
                   Actualidad
                 </span>
               )}
-              <h3 className="text-sm font-semibold leading-snug text-slate-900 sm:text-base">{item.company}</h3>
+              <h3 className="text-sm font-semibold leading-snug text-ink sm:text-base">{item.company}</h3>
               <p className="mt-1 text-sm font-medium text-primary-600">{item.role}</p>
-              <p className="mt-1 text-xs text-slate-500 sm:text-sm">{item.period}</p>
+              <p className="mt-1 text-xs text-muted sm:text-sm">{item.period}</p>
             </div>
           </div>
         </div>

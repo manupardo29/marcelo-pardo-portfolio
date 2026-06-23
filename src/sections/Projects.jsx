@@ -7,7 +7,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <section id="obras" className="section-padding bg-white" aria-labelledby="obras-heading">
+    <section id="obras" className="section-padding bg-card" aria-labelledby="obras-heading">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           id="obras-heading"

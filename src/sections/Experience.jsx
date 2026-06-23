@@ -5,7 +5,7 @@ import Timeline from '../components/Timeline'
 
 export default function Experience() {
   return (
-    <section id="experiencia" className="section-padding bg-white" aria-labelledby="experiencia-heading">
+    <section id="experiencia" className="section-padding bg-card" aria-labelledby="experiencia-heading">
       <div className="mx-auto max-w-5xl">
         <SectionTitle
           id="experiencia-heading"
@@ -18,22 +18,22 @@ export default function Experience() {
 
         {earlierExperience.length > 0 && (
           <div className="mt-10 rounded-lg border border-border bg-surface p-5 sm:p-6">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted">
               Otras experiencias
             </h3>
             <ul className="grid gap-3 sm:grid-cols-2">
               {earlierExperience.map((item) => (
                 <li key={`${item.company}-${item.period}`} className="text-sm">
-                  <span className="font-medium text-slate-800">{item.company}</span>
-                  <span className="text-slate-500"> — {item.role}</span>
-                  <span className="block text-xs text-slate-400">{item.period}</span>
+                  <span className="font-medium text-ink">{item.company}</span>
+                  <span className="text-muted"> — {item.role}</span>
+                  <span className="block text-xs text-muted/70">{item.period}</span>
                 </li>
               ))}
             </ul>
           </div>
         )}
 
-        <p className="mt-6 text-center text-sm text-slate-500">
+        <p className="mt-6 text-center text-sm text-muted">
           {experienceNote}{' '}
           <a
             href={contact.cvPath}

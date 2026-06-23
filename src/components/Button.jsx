@@ -2,7 +2,7 @@ const variants = {
   primary:
     'bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 border border-primary-600 shadow-sm',
   secondary:
-    'bg-white text-primary-700 hover:bg-primary-50 active:bg-primary-100 border border-border hover:border-primary-300',
+    'bg-card text-primary-600 hover:bg-primary-50 active:bg-primary-100 border border-border hover:border-primary-300',
   outline:
     'bg-transparent text-primary-600 hover:bg-primary-50 active:bg-primary-100 border border-primary-300',
   ghost: 'bg-transparent text-primary-600 hover:bg-primary-50 border border-transparent',

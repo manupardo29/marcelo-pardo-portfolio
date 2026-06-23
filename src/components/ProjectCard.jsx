@@ -21,26 +21,26 @@ export default function ProjectCard({ project, onViewDetail }) {
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">
-        <h3 className="mb-3 text-base font-semibold leading-snug text-slate-900 group-hover:text-primary-700 sm:text-lg">
+        <h3 className="mb-3 text-base font-semibold leading-snug text-ink group-hover:text-primary-600 sm:text-lg">
           {project.name}
         </h3>
 
         <div className="mb-3 space-y-2 text-sm">
           <div className="flex items-baseline gap-2">
-            <span className="shrink-0 text-xs font-medium uppercase tracking-wide text-slate-400">Rol</span>
-            <span className="font-medium text-slate-700">{project.role}</span>
+            <span className="shrink-0 text-xs font-medium uppercase tracking-wide text-muted/70">Rol</span>
+            <span className="font-medium text-muted">{project.role}</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="shrink-0 text-xs font-medium uppercase tracking-wide text-slate-400">Comitente</span>
-            <span className="line-clamp-2 text-slate-600">{project.client}</span>
+            <span className="shrink-0 text-xs font-medium uppercase tracking-wide text-muted/70">Comitente</span>
+            <span className="line-clamp-2 text-muted">{project.client}</span>
           </div>
         </div>
 
         <div className="mb-4 rounded-lg border border-primary-100 bg-primary-50 px-3 py-2.5">
-          <p className="text-sm font-semibold leading-snug text-primary-700">{project.metric}</p>
+          <p className="text-sm font-semibold leading-snug text-primary-600">{project.metric}</p>
         </div>
 
-        <p className="mb-4 hidden flex-1 text-sm leading-relaxed text-slate-600 line-clamp-2 sm:block">
+        <p className="mb-4 hidden flex-1 text-sm leading-relaxed text-muted line-clamp-2 sm:block">
           {project.description}
         </p>
 
@@ -90,14 +90,14 @@ export function ProjectModal({ project, onClose }) {
       aria-labelledby="project-modal-title"
     >
       <div
-        className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-primary-900/60 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
 
       <div
         ref={panelRef}
-        className="relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-white shadow-2xl sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl"
+        className="relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-card shadow-2xl sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl"
       >
         <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-surface">
           <ProjectImage src={project.image} alt={imageAlt} name={project.name} />
@@ -105,7 +105,7 @@ export function ProjectModal({ project, onClose }) {
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="absolute right-3 top-3 rounded-full bg-white/90 p-2.5 text-slate-600 shadow-sm transition-colors hover:bg-white hover:text-slate-900"
+            className="absolute right-3 top-3 rounded-full bg-card/90 p-2.5 text-muted shadow-sm transition-colors hover:bg-card hover:text-ink"
             aria-label="Cerrar detalle de obra"
           >
             <Icon name="close" />
@@ -113,30 +113,30 @@ export function ProjectModal({ project, onClose }) {
         </div>
 
         <div className="p-5 sm:p-8">
-          <span className="mb-3 inline-block rounded-md bg-primary-100 px-2.5 py-1 text-xs font-semibold text-primary-700">
+          <span className="mb-3 inline-block rounded-md bg-primary-100 px-2.5 py-1 text-xs font-semibold text-primary-600">
             {project.category}
           </span>
 
-          <h3 id="project-modal-title" className="mb-4 text-lg font-bold leading-snug text-slate-900 sm:text-2xl">
+          <h3 id="project-modal-title" className="mb-4 text-lg font-bold leading-snug text-ink sm:text-2xl">
             {project.name}
           </h3>
 
           <dl className="mb-5 grid gap-3 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-surface p-3">
-              <dt className="text-xs font-medium uppercase tracking-wide text-slate-500">Rol</dt>
-              <dd className="mt-1 text-sm font-medium text-slate-800">{project.role}</dd>
+              <dt className="text-xs font-medium uppercase tracking-wide text-muted">Rol</dt>
+              <dd className="mt-1 text-sm font-medium text-ink">{project.role}</dd>
             </div>
             <div className="rounded-lg border border-border bg-surface p-3">
-              <dt className="text-xs font-medium uppercase tracking-wide text-slate-500">Comitente</dt>
-              <dd className="mt-1 text-sm font-medium text-slate-800">{project.client}</dd>
+              <dt className="text-xs font-medium uppercase tracking-wide text-muted">Comitente</dt>
+              <dd className="mt-1 text-sm font-medium text-ink">{project.client}</dd>
             </div>
           </dl>
 
           <div className="mb-5 rounded-lg border border-primary-200 bg-primary-50 p-4">
-            <p className="text-sm font-semibold text-primary-800">{project.metric}</p>
+            <p className="text-sm font-semibold text-primary-600">{project.metric}</p>
           </div>
 
-          <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p className="text-sm leading-relaxed text-muted sm:text-base">
             {project.description}
           </p>
         </div>

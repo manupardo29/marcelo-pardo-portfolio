@@ -3,7 +3,7 @@ import SectionTitle from '../components/SectionTitle'
 
 export default function Education() {
   return (
-    <section className="section-padding bg-white" aria-labelledby="formacion-heading">
+    <section className="section-padding bg-card" aria-labelledby="formacion-heading">
       <div className="mx-auto max-w-4xl">
         <SectionTitle
           id="formacion-heading"
@@ -18,8 +18,8 @@ export default function Education() {
               className="flex flex-col gap-1 rounded-lg border border-border bg-surface p-5 sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
-                <h3 className="font-semibold text-slate-900">{item.degree}</h3>
-                <p className="text-sm text-slate-600">{item.institution}</p>
+                <h3 className="font-semibold text-ink">{item.degree}</h3>
+                <p className="text-sm text-muted">{item.institution}</p>
               </div>
               <span className="text-sm font-medium text-primary-600">{item.year}</span>
             </div>
@@ -30,7 +30,7 @@ export default function Education() {
           <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-primary-700">
             Formación complementaria
           </h3>
-          <p className="text-sm leading-relaxed text-slate-700">{complementaryTraining}</p>
+          <p className="text-sm leading-relaxed text-muted">{complementaryTraining}</p>
         </div>
       </div>
     </section>

@@ -15,19 +15,19 @@ export default function Profile() {
         />
 
         <div className="mx-auto max-w-4xl">
-          <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
+          <p className="text-base leading-relaxed text-muted sm:text-lg">
             {profile.text}
           </p>
 
           <Card hover={false} className="mt-10 p-6 sm:p-8">
-            <h3 className="mb-5 text-lg font-semibold text-slate-900">Competencias en obra</h3>
+            <h3 className="mb-5 text-lg font-semibold text-ink">Competencias en obra</h3>
             <ul className="grid gap-3 sm:grid-cols-2" role="list">
               {profile.strengths.map((strength) => (
                 <li key={strength} className="flex items-start gap-3">
                   <span className="mt-0.5 text-primary-600" aria-hidden="true">
                     <Icon name="check" />
                   </span>
-                  <span className="text-sm text-slate-700 sm:text-base">{strength}</span>
+                  <span className="text-sm text-muted sm:text-base">{strength}</span>
                 </li>
               ))}
             </ul>
