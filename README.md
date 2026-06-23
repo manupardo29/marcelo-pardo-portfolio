@@ -73,11 +73,14 @@ Todo el contenido principal está en `src/data/`:
 
 ### Agregar imágenes de obras
 
-1. Colocar las fotos en `/public/projects/` (ej: `mercado-libre.jpg`).
-2. Actualizar el campo `image` en `src/data/projects.js`:
+1. Colocar las fotos en `/public/projects/` usando el nombre sugerido en cada obra (ver tabla en `public/projects/README.md`).
+2. En `src/data/projects.js`, reemplazar `image: null` por la ruta pública:
    ```js
    image: '/projects/mercado-libre.jpg',
    ```
+3. Opcional: personalizar el texto alternativo en el campo `imageAlt` de cada obra.
+
+Si `image` es `null` o el archivo no existe, se muestra un placeholder automático. El diseño admite obras con y sin foto en la misma grilla.
 
 ### Agregar foto de perfil
 

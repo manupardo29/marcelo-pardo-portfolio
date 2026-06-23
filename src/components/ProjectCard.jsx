@@ -1,13 +1,21 @@
 import { useEffect, useRef } from 'react'
 import ProjectImage from './ProjectImage'
 import Button from './Button'
+import { getProjectImageAlt } from '../utils/projectImage'
 
 export default function ProjectCard({ project, onViewDetail }) {
+  const imageAlt = getProjectImageAlt(project)
+
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-all duration-200 hover:border-primary-200 hover:shadow-md">
-      <div className="relative aspect-[5/3] overflow-hidden border-b border-border sm:aspect-[16/10]">
-        <ProjectImage src={project.image} alt={project.name} />
-        <div className="absolute left-3 top-3 right-3">
+      {/* Contenedor fijo: mantiene proporción con foto real o placeholder */}
+      <div className="relative aspect-[5/3] overflow-hidden border-b border-border bg-surface sm:aspect-[16/10]">
+        <ProjectImage
+          src={project.image}
+          alt={imageAlt}
+          name={project.name}
+        />
+        <div className="pointer-events-none absolute left-3 top-3 right-3">
           <span className="inline-block max-w-full truncate rounded-md bg-primary-600/90 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
             {project.category}
           </span>
@@ -77,6 +85,8 @@ export function ProjectModal({ project, onClose }) {
 
   if (!project) return null
 
+  const imageAlt = getProjectImageAlt(project)
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-4"
@@ -92,8 +102,12 @@ export function ProjectModal({ project, onClose }) {
       />
 
       <div className="relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl border border-border bg-white shadow-2xl sm:max-h-[90vh] sm:max-w-2xl sm:rounded-xl">
-        <div className="relative aspect-[16/9] border-b border-border">
-          <ProjectImage src={project.image} alt={project.name} />
+        <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-surface">
+          <ProjectImage
+            src={project.image}
+            alt={imageAlt}
+            name={project.name}
+          />
           <button
             ref={closeButtonRef}
             onClick={onClose}
