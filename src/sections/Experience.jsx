@@ -5,7 +5,7 @@ import Timeline from '../components/Timeline'
 
 export default function Experience() {
   return (
-    <section id="experiencia" className="section-padding bg-white">
+    <section id="experiencia" className="section-padding bg-surface">
       <div className="mx-auto max-w-5xl">
         <SectionTitle
           label="Trayectoria"

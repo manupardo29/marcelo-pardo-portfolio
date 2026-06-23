@@ -5,8 +5,8 @@ import { Icon } from '../components/Icon'
 
 export default function Contact() {
   return (
-    <section id="contacto" className="section-padding bg-primary-600">
-      <div className="mx-auto max-w-4xl text-center">
+    <section id="contacto" className="section-padding bg-primary-700">
+      <div className="mx-auto max-w-3xl text-center">
         <SectionTitle
           label="Contacto"
           title="Contacto profesional"
@@ -14,52 +14,56 @@ export default function Contact() {
           dark
         />
 
-        <div className="mx-auto mt-10 max-w-lg rounded-xl border border-primary-500 bg-white p-6 shadow-lg sm:p-8">
-          <div className="space-y-4">
+        <div className="mx-auto rounded-2xl border border-primary-500/50 bg-white p-5 shadow-xl sm:p-8">
+          <div className="mb-6 grid gap-3 sm:grid-cols-3">
             <a
               href={`mailto:${contact.email}`}
-              className="flex items-center justify-center gap-3 rounded-lg border border-border bg-surface p-4 text-slate-700 transition-colors hover:border-primary-200 hover:bg-primary-50"
+              className="flex flex-col items-center gap-2 rounded-xl border border-border bg-surface p-4 text-slate-700 transition-colors hover:border-primary-200 hover:bg-primary-50 active:bg-primary-50"
             >
               <span className="text-primary-600"><Icon name="mail" /></span>
-              <span className="text-sm font-medium sm:text-base">{contact.email}</span>
+              <span className="text-xs font-medium uppercase tracking-wide text-slate-500">Email</span>
+              <span className="text-center text-sm font-medium leading-snug">{contact.email}</span>
             </a>
 
             <a
               href={contact.phoneHref}
-              className="flex items-center justify-center gap-3 rounded-lg border border-border bg-surface p-4 text-slate-700 transition-colors hover:border-primary-200 hover:bg-primary-50"
+              className="flex flex-col items-center gap-2 rounded-xl border border-border bg-surface p-4 text-slate-700 transition-colors hover:border-primary-200 hover:bg-primary-50 active:bg-primary-50"
             >
               <span className="text-primary-600"><Icon name="phone" /></span>
-              <span className="text-sm font-medium sm:text-base">{contact.phone}</span>
+              <span className="text-xs font-medium uppercase tracking-wide text-slate-500">Teléfono</span>
+              <span className="text-center text-sm font-medium">{contact.phone}</span>
             </a>
 
             <a
               href={contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 rounded-lg border border-border bg-surface p-4 text-slate-700 transition-colors hover:border-primary-200 hover:bg-primary-50"
+              className="flex flex-col items-center gap-2 rounded-xl border border-border bg-surface p-4 text-slate-700 transition-colors hover:border-primary-200 hover:bg-primary-50 active:bg-primary-50"
             >
               <span className="text-primary-600"><Icon name="linkedin" /></span>
-              <span className="text-sm font-medium">LinkedIn</span>
+              <span className="text-xs font-medium uppercase tracking-wide text-slate-500">LinkedIn</span>
+              <span className="text-center text-sm font-medium">Ver perfil</span>
             </a>
           </div>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Button
-              href={contact.cvPath}
-              variant="primary"
-              size="md"
-              download="cv-marcelo-pardo.pdf"
-              icon={<Icon name="download" />}
-            >
-              Descargar CV
-            </Button>
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button
               href={`mailto:${contact.email}`}
-              variant="secondary"
-              size="md"
+              size="lg"
+              className="w-full sm:w-auto"
               icon={<Icon name="mail" />}
             >
               Enviar email
+            </Button>
+            <Button
+              href={contact.cvPath}
+              variant="secondary"
+              size="lg"
+              download="cv-marcelo-pardo.pdf"
+              icon={<Icon name="download" />}
+              className="w-full sm:w-auto"
+            >
+              Descargar CV
             </Button>
           </div>
         </div>

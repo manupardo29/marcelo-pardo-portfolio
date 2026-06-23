@@ -1,9 +1,10 @@
 import Header, { Footer } from './components/Header'
+import MobileContactBar from './components/MobileContactBar'
 import Hero from './sections/Hero'
 import Metrics from './sections/Metrics'
 import Profile from './sections/Profile'
-import Specializations from './sections/Specializations'
 import Projects from './sections/Projects'
+import Specializations from './sections/Specializations'
 import Experience from './sections/Experience'
 import Skills from './sections/Skills'
 import Education from './sections/Education'
@@ -19,18 +20,19 @@ export default function App() {
         Saltar al contenido
       </a>
       <Header />
-      <main>
+      <main className="pb-16 sm:pb-0">
         <Hero />
         <Metrics />
         <Profile />
-        <Specializations />
         <Projects />
+        <Specializations />
         <Experience />
         <Skills />
         <Education />
         <Contact />
       </main>
       <Footer />
+      <MobileContactBar />
     </>
   )
 }

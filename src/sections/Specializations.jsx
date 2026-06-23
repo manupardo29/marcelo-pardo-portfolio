@@ -4,7 +4,7 @@ import SpecializationCard from '../components/SpecializationCard'
 
 export default function Specializations() {
   return (
-    <section id="especializacion" className="section-padding bg-white">
+    <section id="especializacion" className="section-padding bg-surface">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           label="Especialización"
@@ -12,7 +12,7 @@ export default function Specializations() {
           description="Experiencia técnica en múltiples disciplinas de la ingeniería civil e infraestructura."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {specializations.map((item) => (
             <SpecializationCard key={item.id} item={item} />
           ))}

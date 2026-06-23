@@ -3,7 +3,7 @@ import SectionTitle from '../components/SectionTitle'
 
 export default function Skills() {
   return (
-    <section className="section-padding bg-surface" aria-label="Herramientas y conocimientos técnicos">
+    <section className="section-padding bg-white" aria-label="Herramientas y conocimientos técnicos">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           label="Competencias"

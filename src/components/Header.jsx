@@ -24,77 +24,102 @@ export default function Header() {
   const handleNavClick = () => setIsOpen(false)
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'border-b border-border bg-white/95 shadow-sm backdrop-blur-md'
-          : 'bg-white/80 backdrop-blur-sm'
-      }`}
-    >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a
-          href="#inicio"
-          className="text-lg font-bold tracking-tight text-primary-700 transition-colors hover:text-primary-800"
-        >
-          Marcelo Pardo
-        </a>
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
+          isScrolled || isOpen
+            ? 'border-b border-border bg-white/95 shadow-sm backdrop-blur-md'
+            : 'bg-white/90 backdrop-blur-sm'
+        }`}
+      >
+        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6 lg:px-8">
+          <a
+            href="#inicio"
+            className="shrink-0 text-base font-bold tracking-tight text-primary-700 transition-colors hover:text-primary-800 sm:text-lg"
+            onClick={handleNavClick}
+          >
+            Marcelo Pardo
+          </a>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegación principal">
-          {navigation.map((item) => (
-            <a
-              key={item.id}
-              href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-primary-50 hover:text-primary-700"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="hidden lg:block">
-          <Button href="#contacto" size="sm">
-            Contactar
-          </Button>
-        </div>
-
-        <button
-          type="button"
-          className="rounded-md p-2 text-slate-600 transition-colors hover:bg-surface-alt lg:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
-        >
-          <Icon name={isOpen ? 'close' : 'menu'} />
-        </button>
-      </div>
-
-      {isOpen && (
-        <nav
-          id="mobile-menu"
-          className="border-t border-border bg-white px-4 py-4 lg:hidden"
-          aria-label="Navegación móvil"
-        >
-          <div className="flex flex-col gap-1">
+          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Navegación principal">
             {navigation.map((item) => (
               <a
                 key={item.id}
                 href={item.href}
-                onClick={handleNavClick}
-                className="rounded-md px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-primary-50 hover:text-primary-700"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-primary-50 hover:text-primary-700"
               >
                 {item.label}
               </a>
             ))}
-            <div className="mt-3 border-t border-border pt-3">
-              <Button href="#contacto" size="md" className="w-full" onClick={handleNavClick}>
-                Contactar
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <Button href="#contacto" size="sm" className="hidden sm:inline-flex">
+              Contactar
+            </Button>
+            <button
+              type="button"
+              className="rounded-lg p-2.5 text-slate-600 transition-colors hover:bg-surface-alt lg:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            >
+              <Icon name={isOpen ? 'close' : 'menu'} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {isOpen && (
+        <div className="fixed inset-0 z-30 lg:hidden" aria-hidden="false">
+          <div
+            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
+            onClick={handleNavClick}
+            aria-hidden="true"
+          />
+          <nav
+            id="mobile-menu"
+            className="absolute inset-x-0 top-14 border-b border-border bg-white px-4 pb-6 pt-2 shadow-lg sm:top-16"
+            aria-label="Navegación móvil"
+          >
+            <div className="flex flex-col gap-0.5">
+              {navigation.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={handleNavClick}
+                  className="rounded-lg px-4 py-3.5 text-base font-medium text-slate-700 transition-colors active:bg-primary-50"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+            <div className="mt-4 grid grid-cols-2 gap-3 border-t border-border pt-4">
+              <Button
+                href={`mailto:${contact.email}`}
+                variant="secondary"
+                size="md"
+                className="w-full"
+                onClick={handleNavClick}
+                icon={<Icon name="mail" />}
+              >
+                Email
+              </Button>
+              <Button
+                href={contact.phoneHref}
+                size="md"
+                className="w-full"
+                onClick={handleNavClick}
+                icon={<Icon name="phone" />}
+              >
+                Llamar
               </Button>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       )}
-    </header>
+    </>
   )
 }
 
@@ -102,14 +127,14 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border bg-slate-900 text-slate-400">
+    <footer className="border-t border-border bg-slate-900 pb-20 text-slate-400 sm:pb-10">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="text-center sm:text-left">
             <p className="font-semibold text-white">{contact.name}</p>
             <p className="mt-1 text-sm">{contact.title} — {contact.location}</p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
             <a
               href={`mailto:${contact.email}`}
               className="text-sm transition-colors hover:text-white"

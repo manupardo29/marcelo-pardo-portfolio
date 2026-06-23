@@ -1,17 +1,17 @@
 const variants = {
   primary:
-    'bg-primary-600 text-white hover:bg-primary-700 border border-primary-600 shadow-sm',
+    'bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 border border-primary-600 shadow-sm',
   secondary:
-    'bg-white text-primary-700 hover:bg-primary-50 border border-border hover:border-primary-300',
+    'bg-white text-primary-700 hover:bg-primary-50 active:bg-primary-100 border border-border hover:border-primary-300',
   outline:
-    'bg-transparent text-primary-600 hover:bg-primary-50 border border-primary-300',
+    'bg-transparent text-primary-600 hover:bg-primary-50 active:bg-primary-100 border border-primary-300',
   ghost: 'bg-transparent text-primary-600 hover:bg-primary-50 border border-transparent',
 }
 
 const sizes = {
-  sm: 'px-3 py-1.5 text-sm gap-1.5',
-  md: 'px-4 py-2.5 text-sm gap-2',
-  lg: 'px-6 py-3 text-base gap-2',
+  sm: 'px-3.5 py-2 text-sm gap-1.5 min-h-[40px]',
+  md: 'px-5 py-2.5 text-sm gap-2 min-h-[44px] sm:text-base',
+  lg: 'px-6 py-3 text-base gap-2 min-h-[48px]',
 }
 
 export default function Button({
@@ -24,7 +24,7 @@ export default function Button({
   icon,
   ...props
 }) {
-  const classes = `inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 ${variants[variant]} ${sizes[size]} ${className}`
+  const classes = `inline-flex items-center justify-center font-medium rounded-lg transition-colors duration-200 ${variants[variant]} ${sizes[size]} ${className}`
 
   const content = (
     <>

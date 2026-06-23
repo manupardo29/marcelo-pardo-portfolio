@@ -7,7 +7,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <section id="obras" className="section-padding bg-surface">
+    <section id="obras" className="section-padding bg-white">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           label="Portfolio"
@@ -15,7 +15,7 @@ export default function Projects() {
           description="Proyectos de infraestructura civil en los que intervino como jefe o director de obra."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
