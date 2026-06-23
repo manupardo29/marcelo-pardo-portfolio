@@ -7,6 +7,20 @@ export const experience = [
     current: true,
   },
   {
+    id: 'solana',
+    company: 'Solana S.R.L.',
+    role: 'Jefe de Obra',
+    period: 'Agosto 2019 — Marzo 2020',
+    current: false,
+  },
+  {
+    id: 'lapesa',
+    company: 'Lapesa S.R.L.',
+    role: 'Jefe de Obra',
+    period: 'Abril 2019 — Julio 2019',
+    current: false,
+  },
+  {
     id: 'coarco',
     company: 'Coarco S.A.',
     role: 'Jefe de Obra',
@@ -28,10 +42,24 @@ export const experience = [
     current: false,
   },
   {
-    id: 'perales',
-    company: 'Perales Aguiar S.A. / UTE Dycasa - Perales Aguiar',
+    id: 'ute-dycasa',
+    company: 'UTE Dycasa - Perales Aguiar',
     role: 'Jefe de Obra',
-    period: 'Junio 1994 — Diciembre 1995',
+    period: 'Enero 1995 — Diciembre 1995',
+    current: false,
+  },
+  {
+    id: 'perales',
+    company: 'Perales Aguiar S.A.',
+    role: 'Jefe de Obra',
+    period: 'Junio 1994 — Diciembre 1994',
+    current: false,
+  },
+  {
+    id: 'pnud',
+    company: 'Programa de las Naciones Unidas para el Desarrollo (PNUD)',
+    role: 'Consultor Senior B IV',
+    period: 'Julio 1993 — Septiembre 1993',
     current: false,
   },
   {
@@ -42,20 +70,20 @@ export const experience = [
     current: false,
   },
   {
+    id: 'secretaria',
+    company: 'Secretaría de Industria, Comercio e Inversiones',
+    role: 'Profesional Técnico',
+    period: 'Mayo 1989 — Mayo 1994',
+    current: false,
+  },
+  {
     id: 'armada',
     company: 'Armada Argentina',
-    role: 'Ingeniero Civil — Relevamiento y Obra Vial',
+    role: 'Ingeniero Civil, Relevamiento y Obra Vial',
     period: 'Abril 1988 — Abril 1989',
     current: false,
   },
 ]
 
-export const earlierExperience = [
-  { company: 'Solana S.R.L.', role: 'Jefe de Obra', period: '2019' },
-  { company: 'Lapesa S.R.L.', role: 'Jefe de Obra', period: '2019' },
-  { company: 'PNUD', role: 'Consultor Senior B IV', period: '1993' },
-  { company: 'Secretaría de Industria, Comercio e Inversiones', role: 'Profesional Técnico', period: '1989 — 1994' },
-]
-
 export const experienceNote =
-  'El detalle completo de la trayectoria laboral, incluyendo otras empresas y períodos, está disponible en el CV descargable.'
+  'El detalle completo de la trayectoria laboral se encuentra disponible en el CV descargable.'

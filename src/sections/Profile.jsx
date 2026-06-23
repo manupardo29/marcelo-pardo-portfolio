@@ -11,7 +11,7 @@ export default function Profile() {
           id="perfil-heading"
           label="Perfil"
           title="Perfil profesional"
-          description="Dirección y ejecución de obras de infraestructura civil en el ámbito público y privado."
+          description="Dirección y ejecución de proyectos de infraestructura civil en el ámbito público y privado."
         />
 
         <div className="mx-auto max-w-4xl">

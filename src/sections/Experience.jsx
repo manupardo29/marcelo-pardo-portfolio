@@ -1,4 +1,4 @@
-import { experience, earlierExperience, experienceNote } from '../data/experience'
+import { experience, experienceNote } from '../data/experience'
 import { contact } from '../data/contact'
 import SectionTitle from '../components/SectionTitle'
 import Timeline from '../components/Timeline'
@@ -11,29 +11,12 @@ export default function Experience() {
           id="experiencia-heading"
           label="Trayectoria"
           title="Experiencia profesional"
-          description="Resumen de la trayectoria en empresas constructoras y organismos públicos, con foco en jefatura y dirección de obra."
+          description="Recorrido profesional en empresas constructoras y organismos públicos, con foco en jefatura y dirección."
         />
 
         <Timeline items={experience} />
 
-        {earlierExperience.length > 0 && (
-          <div className="mt-10 rounded-lg border border-border border-t-2 border-t-accent/25 bg-surface p-5 sm:p-6">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted">
-              Otras experiencias
-            </h3>
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {earlierExperience.map((item) => (
-                <li key={`${item.company}-${item.period}`} className="text-sm">
-                  <span className="font-medium text-ink">{item.company}</span>
-                  <span className="text-muted"> — {item.role}</span>
-                  <span className="block text-xs text-muted/70">{item.period}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        <p className="mt-6 text-center text-sm text-muted">
+        <p className="mt-8 text-center text-sm text-muted sm:mt-10">
           {experienceNote}{' '}
           <a
             href={contact.cvPath}

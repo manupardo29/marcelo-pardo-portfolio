@@ -12,7 +12,7 @@ export default function Contact() {
           id="contacto-heading"
           label="Contacto"
           title="Contacto profesional"
-          description="Disponible para dirección de obra, jefatura de obra, supervisión técnica y proyectos de infraestructura civil."
+          description="Abierto a propuestas de dirección, jefatura y supervisión técnica en proyectos de infraestructura civil."
           dark
         />
 
