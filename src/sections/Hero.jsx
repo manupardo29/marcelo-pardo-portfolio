@@ -50,6 +50,7 @@ export default function Hero() {
                 href={contact.cvPath}
                 variant="secondary"
                 size="md"
+                download="cv-marcelo-pardo.pdf"
                 icon={<Icon name="download" />}
               >
                 Descargar CV

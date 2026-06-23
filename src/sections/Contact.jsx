@@ -48,6 +48,7 @@ export default function Contact() {
               href={contact.cvPath}
               variant="primary"
               size="md"
+              download="cv-marcelo-pardo.pdf"
               icon={<Icon name="download" />}
             >
               Descargar CV

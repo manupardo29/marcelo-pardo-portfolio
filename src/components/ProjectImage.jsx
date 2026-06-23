@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Icon } from './Icon'
 
 /**
@@ -6,13 +7,16 @@ import { Icon } from './Icon'
  * y colocar el archivo en /public/projects/
  */
 export default function ProjectImage({ src, alt, className = '' }) {
-  if (src) {
+  const [hasError, setHasError] = useState(false)
+
+  if (src && !hasError) {
     return (
       <img
         src={src}
         alt={alt}
         className={`h-full w-full object-cover ${className}`}
         loading="lazy"
+        onError={() => setHasError(true)}
       />
     )
   }

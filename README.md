@@ -27,10 +27,17 @@ npm run preview
 ## Deploy en Netlify
 
 1. Conectar el repositorio en [Netlify](https://www.netlify.com/).
-2. Configurar:
+2. Configurar (ya definido en `netlify.toml`):
    - **Build command:** `npm run build`
    - **Publish directory:** `dist`
-3. El archivo `netlify.toml` ya incluye esta configuración.
+   - **Node version:** 20
+3. Hacer deploy. No se requiere backend ni variables de entorno.
+
+> **Nota sobre el CV:** el botón "Descargar CV" apunta a `/cv-marcelo-pardo.pdf`. El sitio funciona sin ese archivo, pero el enlace devolverá 404 en producción hasta que se suba el PDF en `/public/cv-marcelo-pardo.pdf` y se vuelva a desplegar.
+
+## Requisitos
+
+- Node.js 18 o superior (recomendado: 20)
 
 ## Estructura del proyecto
 
@@ -79,7 +86,10 @@ Todo el contenido principal está en `src/data/`:
 
 ### Agregar CV
 
-Colocar el archivo PDF en `/public/cv-marcelo-pardo.pdf`.
+1. Colocar el archivo PDF en `/public/cv-marcelo-pardo.pdf`.
+2. Ejecutar `npm run build` y volver a desplegar en Netlify.
+
+Hasta que el PDF esté disponible, el resto del sitio funciona con normalidad.
 
 ## Licencia
 
